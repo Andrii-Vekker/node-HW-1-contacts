@@ -1,6 +1,4 @@
-// const yargs = require("yargs");
-// const {hideBin} = require("yargs/helpers") with yargs
-//////////////////////////////////////////////////////////////////
+
 const { Command } = require("commander");
 const program = new Command();
 
@@ -43,12 +41,3 @@ program.parse(process.argv);
 
 const argv = program.opts();
 invokeAction(argv)
-
-// const arr = hideBin(process.argv);
-// const { argv } = yargs(arr);       with yargs
-// invokeAction(argv);
-
-// invokeAction({action: "list"});
-// invokeAction({action: "get", id: "1"});
-// invokeAction({ action: "add", name: "1", email: "lox@emailcom", phone: "123124324" });
-// invokeAction({action: "remove", id: "9"});
