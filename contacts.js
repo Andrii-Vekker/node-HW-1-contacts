@@ -1,13 +1,10 @@
 const fs = require("fs/promises");
 const path = require("path");
 const { nanoid } = require("nanoid");
-const { string } = require("yargs");
-
-
+// const { string } = require("yargs");
 const contactsPath = path.join(__dirname, "db/contacts.json");
 
 const updateContacts = async(contacts) => await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
-
 
 const listContacts = async () => {
   const data = await fs.readFile(contactsPath);
@@ -48,7 +45,6 @@ const addContact = async (name, email, phone) => {
   await updateContacts(contacts)
   return newBook;
 };
-
 
 module.exports = {
   listContacts,

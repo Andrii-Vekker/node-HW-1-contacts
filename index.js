@@ -1,13 +1,10 @@
 // const yargs = require("yargs");
 // const {hideBin} = require("yargs/helpers") with yargs
 //////////////////////////////////////////////////////////////////
-// const {program} = require("commander")
 const { Command } = require("commander");
 const program = new Command();
 
 const contacts = require("./contacts")
-
-
 
 const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
@@ -44,15 +41,12 @@ program
   .option("-p, --phone <type>", "user phone");
 program.parse(process.argv);
 
-
 const argv = program.opts();
 invokeAction(argv)
-
 
 // const arr = hideBin(process.argv);
 // const { argv } = yargs(arr);       with yargs
 // invokeAction(argv);
-
 
 // invokeAction({action: "list"});
 // invokeAction({action: "get", id: "1"});
